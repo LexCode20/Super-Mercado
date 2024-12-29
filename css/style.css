@@ -1,95 +1,115 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f6f6f6;
 }
+
 header {
     background-color: #fff;
-    height: 10vh;
-    display: flex; /* Torna o header um contêiner flexível */
-    align-items: center; /* Alinha os itens verticalmente */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    padding: 0 20px; /* Adiciona espaçamento interno */
-    box-sizing: border-box; /* Inclui padding no tamanho total */
-}
-
-ul {
-    list-style: none;
-    display: flex; /* Torna o ul um contêiner flexível */
-    align-items: center; /* Alinha os itens verticalmente */
-    gap: 45px;
-    width: 100%; /* Faz o ul ocupar toda a largura do header */
-    margin: 0;
-    padding: 0;
-}
-
-ul #logo img {
-    height: 40px; /* Define uma altura fixa */
-    width: 40px; /* Define uma largura fixa */
-    border-radius: 50%; /* Deixa a imagem redonda */
-    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
-    margin-right: 10px; /* Adiciona espaço ao lado da imagem */
-}
-
-li{
-    cursor: pointer;
-    padding: 10px;
-    font-size: .9rem;
-}
-
-i {
-    font-size: 20px; /* Tamanho dos ícones */
-    color: #555; /* Cor dos ícones */
-}
-.search-container {
-    position: relative; /* Define um contêiner relativo para posicionar o ícone */
-    display: flex; /* Garante que o input e o ícone fiquem alinhados */
+    display: flex;
     align-items: center;
-    width: 250px; /* Largura do campo de busca */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+ul.menu li {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .search-container input {
-    width: 100%; /* O input ocupa todo o espaço disponível */
-    padding: 10px 40px 10px 10px; /* Espaço interno, com espaço à direita para o ícone */
-    border: 1px solid #ccc; /* Borda do input */
-    border-radius: 20px; /* Deixa o input com bordas arredondadas */
-    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
 }
 
 .search-container i {
-    position: absolute; /* Posiciona o ícone dentro do contêiner */
-    right: 10px; /* Distância do lado direito */
-    color: #aaa; /* Cor do ícone */
-    font-size: 18px; /* Tamanho do ícone */
-    cursor: pointer; /* Mostra que o ícone é interativo */
-}
-#perfil {
-    margin-left: auto; /* Move o perfil para o lado direito */
-    display: flex; /* Permite alinhar os itens dentro do li */
-    align-items: center;
+    position: absolute;
+    right: 10px;
+    color: #aaa;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .perfil-container {
-    display: flex; /* Torna o contêiner flexível */
-    flex-direction: column; /* Organiza os itens na vertical (imagem em cima, nome embaixo) */
-    align-items: center; /* Centraliza os itens dentro do contêiner */
-    text-align: center; /* Centraliza o texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .perfil-img {
-    height: 40px; /* Altura da imagem */
-    width: 40px; /* Largura da imagem */
-    border-radius: 50%; /* Deixa a imagem redonda */
-    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
-    cursor: pointer; /* Mostra que a imagem é interativa */
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .perfil-nome {
-    font-size: 12px; /* Tamanho do texto do nome */
-    color: #555; /* Cor do texto */
-    margin-top: 5px; /* Espaço entre a imagem e o nome */
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
 }
 
+/* Responsivo */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    ul.menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    ul.menu.show {
+        display: flex;
+    }
+}
