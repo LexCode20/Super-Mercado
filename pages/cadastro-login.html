@@ -84,19 +84,58 @@
         </div>
     </header>    
     <main>
-        <section id="promo">
-            <!--aqui vai ter um carrousel-->
-        </section>
-        <section id="ofertas">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
-        <section class="produtos">
-            <!--aqui terá uns 5 carrouseis com cada classe dos produtos-->
-        </section>
+        <fieldset>
+            <h2>Entre ou Cadastre-se</h2>
+            <button>Fazer Login</button>
+            <button>Fazer Cadastro</button>
+        </fieldset>
     </main>
     <script src="../js/burguer.js"></script>
+    <style>
+        main {
+            margin-top: 10vh;
+            margin-left: 25%;
+        }
+
+        fieldset {
+            border-radius: 5px;
+            padding: 1vh;
+            height: 200px;
+            width: 500px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: gray;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #f6f6f6;
+            border: none;
+            display: block;
+            margin: 10px;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            main {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            fieldset {
+                width: 100%;
+                height: auto;
+                padding: 2vh;
+            }
+
+            button {
+                width: 100%;
+            }
+        }   
+    </style>
 </body>
 </html>
