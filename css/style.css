@@ -16,6 +16,10 @@ header {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+header a{
+    text-decoration: none;
+    color: black;
+}
 
 .menu-container {
     display: flex;
@@ -44,12 +48,26 @@ ul.menu {
     gap: 20px;
     align-items: center;
 }
-
+/* Icons Colors
+.fa-heart{
+    color: red;
+}
+.fa-shopping-cart{
+    color: brown;
+}
+.fa-phone{
+    color: yellow;
+}
+.fa-map-marker-alt{
+    color: rgb(0, 255, 0);
+}
+*/
 ul.menu li {
-    cursor: pointer;
     font-size: 0.9rem;
 }
-
+ul.menu .link{
+    color: rgb(0, 180, 0);
+}
 .search-container {
     position: relative;
     display: flex;
@@ -119,8 +137,8 @@ ul.menu li {
         border-radius: 10px;
         padding: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 2;
     }
-
     ul.menu.show {
         display: flex;
     }
@@ -186,4 +204,60 @@ ul.menu li {
         font-size: 0.9rem;
         color: #555;
     }
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+.carousel li {
+    list-style: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
 }

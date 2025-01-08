@@ -1,3 +1,15 @@
+<?php
+session_start(); // Inicia a sessão
+
+// Verificar se o usuário está logado
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php"); // Redireciona para o login se não estiver logado
+    exit();
+}
+
+$nome_usuario = $_SESSION['usuario_nome'];
+$imagem_perfil = $_SESSION['usuario_imagem'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +36,8 @@
                     <a href="cadastro-login.html?">
                         <i class="fas fa-user"></i> 
                     </a>
-                    <a href="login.html" class="link">Entre</a> ou 
-                    <a href="cadastro.html" class="link">Cadastre-se</a>
+                    <a href="login.php" class="link">Entre</a> ou 
+                    <a href="cadastro.php" class="link">Cadastre-se</a>
                 </li>
                 <li class="info">
                     <a href="">
@@ -48,9 +60,10 @@
                     </a>
                 </li>
                 <li id="perfil">
+                    <!-- Exibir o nome e a imagem de perfil do usuário -->
                     <div class="perfil-container">
-                        <img src="../img/user.avif" alt="Foto do Usuário" class="perfil-img">
-                        <span class="perfil-nome">Nome do Usuário</span>
+                        <img src="<?php echo $imagem_perfil; ?>" alt="Foto do Usuário" class="perfil-img">
+                        <span class="perfil-nome"><?php echo $nome_usuario; ?></span>
                     </div>
                 </li>
                 <li class="exit">Sair</li>
